@@ -1,5 +1,4 @@
-
-me: "Chromatic"
+name: "Chromatic"
 on: push
 
 jobs:
