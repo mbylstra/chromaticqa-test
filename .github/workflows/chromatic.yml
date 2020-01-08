@@ -1,5 +1,4 @@
-
-me: "Chromatic"
+name: "Chromatic"
 on: push
 
 jobs:
@@ -7,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: npm install
     - uses: chromaui/action@v1
       with:
         appCode: jop5qodv3vl
