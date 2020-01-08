@@ -38,7 +38,8 @@
     "prepublish": "in-publish && safe-publish-latest && npm run build || not-in-publish",
     "postpublish": "[ \"${npm_config_tag:-latest}\" != latest ] || npm run gh-pages",
     "check-changelog": "expr $(git status --porcelain 2>/dev/null| grep \"^\\s*M.*CHANGELOG.md\" | wc -l) >/dev/null || (echo 'Please edit CHANGELOG.md' && exit 1)",
-    "check-only-changelog-changed": "(expr $(git status --porcelain 2>/dev/null| grep -v \"CHANGELOG.md\" | wc -l) >/dev/null && echo 'Only CHANGELOG.md may have uncommitted changes' && exit 1) || exit 0"
+    "check-only-changelog-changed": "(expr $(git status --porcelain 2>/dev/null| grep -v \"CHANGELOG.md\" | wc -l) >/dev/null && echo 'Only CHANGELOG.md may have uncommitted changes' && exit 1) || exit 0",
+    "chromatic": "CHROMATIC_APP_CODE=p07zfy838ii chromatic --storybook-port=6006"
   },
   "repository": {
     "type": "git",
@@ -109,6 +110,7 @@
     "sass-loader": "^7.2.0",
     "sinon": "^7.4.1",
     "sinon-sandbox": "^2.0.5",
+    "storybook-chromatic": "^3.4.1",
     "style-loader": "^0.20.3",
     "typescript": "*",
     "webpack": "^4.31.0"
